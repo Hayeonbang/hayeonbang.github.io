@@ -185,66 +185,43 @@ body {
   font-family: "Lora";
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16);
 }
-
-/* News Section */
-.news-section {
-  padding: 10px 0px 60px;
-}
-
-.news-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-.news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .news-item {
   display: grid;
-  grid-template-columns: 150px 1fr 80px;
-  align-items: center;
+  grid-template-columns: 140px 1fr auto;
+  align-items: start;
+  gap: 12px;
   border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 4px;
+  padding: 8px 0;
 }
 
 .news-date {
-  font-size: 16px;
-  color: #444;
-  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
 }
 
 .news-content {
   font-size: 16px;
-  margin-left: 110px;
+  line-height: 1.6;
 }
+
 .news-content a {
   color: inherit;
   text-decoration: underline;
   text-decoration-color: #ccc;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
-
 .news-content a:hover {
-  color: #444;
-  text-decoration-color: #444;
+  color: #333;
+  text-decoration-color: #333;
 }
 
 .news-tag {
-  display: inline-flex;            /* 수직 수평 정렬을 위해 flex 사용 */
-  align-items: center;             /* 수직 중앙 정렬 */
-  justify-content: center;         /* 수평 중앙 정렬 */
-  font-size: 14px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 8px;
-  text-align: center;
+  font-size: 13px;
+  padding: 4px 12px;
+  font-weight: 600;
+  border-radius: 6px;
   white-space: nowrap;
 }
-
 
 .tag-research {
   background: #f3f3f3;
@@ -492,4 +469,86 @@ body {
 
 .section-content.collapsed {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .container-home {
+    flex-direction: column;
+    padding: 20px;
+    gap: 40px;
+    height: auto;
+  }
+
+  .text-block-home {
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-home {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  .content-wrapper,
+  .section-wrapper,
+  .research-wrapper {
+    width: 90%;
+    padding: 0 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 180px;
+    height: auto;
+  }
+
+  .profile-text {
+    width: 100%;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .research-img {
+    width: 60%;
+    height: auto;
+    max-width: 200px;
+  }
+
+  .experience-block {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .award-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }
