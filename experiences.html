@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience - Hayeon Bang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html" class="nav-item">About</a>
+      <a href="research.html" class="nav-item">Research</a>
+      <a href="projects.html" class="nav-item">Projects</a>
+      <a href="experience.html" class="nav-item active">Experience</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon">
+        <img src="./components/home.svg" alt="Home" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="section-wrapper">
+    <div class="section">
+      <div class="section-title collapsible" onclick="toggleSection(this)">Education</div>
+      <div class="section-content">
+        <div class="experience-block">
+          <div class="experience-left">
+            <div class="institution">Korea Advanced Institute of Science and Technology (KAIST)</div>
+            <div class="position">Music and Audio Computing Lab, Graduate School of Culture Technology</div>
+            <div class="detail">Ph.D. Student in Culture Technology (Advisor: Juhan Nam)</div>
+          </div>
+          <div class="date">2025 – present</div>
+        </div>
+
+        <div class="experience-block">
+          <div class="experience-left">
+            <div class="institution">Korea Advanced Institute of Science and Technology (KAIST)</div>
+            <div class="position">Music and Audio Computing Lab, Graduate School of Culture Technology</div>
+            <div class="detail">M.S. in Culture Technology (Advisor: Juhan Nam)</div>
+          </div>
+          <div class="date">2022 – 2025</div>
+        </div>
+
+        <div class="experience-block">
+          <div class="experience-left">
+            <div class="institution">Yonsei University</div>
+            <div class="position">Music Composition, College of Music</div>
+            <div class="detail">B.M. in Music Composition (Advisor: Sunghyun Yun)</div>
+          </div>
+          <div class="date">2016 – 2021</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title collapsible" onclick="toggleSection(this)">Awards & Honors</div>
+      <div class="section-content">
+        <div class="award-list">
+          <div class="award-row">
+            <div class="award-title"><a href="https://ct.kaist.ac.kr/boards/view/news_board/4241">Seong-Bu Kim Creative Activity Award</a></div>
+            <div class="date">2025</div>
+          </div>
+          <div class="award-row">
+            <div class="award-title">High Honor Awards: Academic Achievement for highest grade students, Academic Achievement for high grade students</div>
+            <div class="date">2020, 2021</div>
+          </div>
+          <div class="award-row">
+            <div class="award-title">Scholarship for Human Resource Development in Mapo-gu</div>
+            <div class="date">2021</div>
+          </div>
+          <div class="award-row">
+            <div class="award-title">Scholarship for Exchange Program: Mirae Asset Park Hyeon Joo Foundation - Student Representative</div>
+            <div class="date">2019</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title collapsible" onclick="toggleSection(this)">Experiences</div>
+      <div class="section-content">
+        <div class="experience-block">
+          <div class="experience-left">
+            <div class="award-title">Seong-Bu Kim Creative Activity Award</div>
+            <div class="award-detail"></div>
+          </div>
+          <div class="date">2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(title) {
+      const content = title.nextElementSibling;
+      content.classList.toggle('collapsed');
+      title.classList.toggle('collapsed-title');
+    }
+  </script>
+</body>
+</html>
