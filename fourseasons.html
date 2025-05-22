@@ -3,26 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Hayeon Bang</title>
+  <title>Four Seasons 2050 - Hayeon Bang</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-top: 60px;
+      padding: 0 20px;
+    }
+    
+
+    .project-title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1.2rem;
+      color: #777;
+      font-weight: 300;
+      margin-bottom: 10px; /* 마진 줄이기 */
+    }
+    .project-link {
+      margin-top: 0;
+      font-size: 0.95rem;
+    }
+    
+    .project-link a {
+      color: #097121; /* 포인트 컬러 – 너무 튀지 않게 조절 가능 */
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+    .project-link a:hover {
+      text-decoration: underline;
+      color: rgb(24, 48, 25); /* hover 시 약간 더 진하게 */
+    }
+    .project-body {
+      width: 100%;
+      padding: 60px 80px;
+      box-sizing: border-box;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .project-body p {
+      max-width: 1200px;
+      margin: 0 auto 15px auto;
+    }
+
+    .project-body strong {
+      font-weight: 600;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px auto 0 auto;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-images {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 60px auto 0 auto;
+      max-width: 1200px;
+      margin-bottom: 60px;
+      padding: 0;
+    }
+    
+    .project-images img {
+      flex: 1;
+      height: auto;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      object-fit: cover;
+      min-width: 0; /* flex-item overflow 방지 */
+    }
+    .project-toggle-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .project-toggle-section details {
+      margin-bottom: 20px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .project-toggle-section summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .project-toggle-section details[open] {
+      background: #f1f1f1;
+    }
+
+    @media (max-width: 768px) {
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .project-body {
+        padding: 40px 20px;
+        font-size: 1rem;
+      }
+
+      .video-container iframe {
+        height: 240px;
+      }
+
+      
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-          <a href="about.html" class="nav-left">About</a>
-          <a href="research.html" class="nav-left">Research</a>
-          <a href="projects.html" class="nav-left active">Projects</a>
-          <a href="experiences.html" class="nav-left">Experiences</a>
-        </div>
-        <div class="nav-right">
-          <a href="index.html" class="nav-home-icon">
-            <img src="./components/home.svg" alt="Home" />
-          </a>
-        </div>
-      </nav>     
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html" class="nav-left">About</a>
+      <a href="research.html" class="nav-left">Research</a>
+      <a href="projects.html" class="nav-left active">Projects</a>
+      <a href="experiences.html" class="nav-left">Experiences</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon">
+        <img src="./components/home.svg" alt="Home" />
+      </a>
+    </div>
+  </nav>
 
+  <div class="content-wrapper">
+    <div class="project-header">
+      <h1 class="project-title">Four Seasons 2050 – Daejeon</h1>
+      <h2 class="project-subtitle">A Climate Change Forecast Report Written in Musical Notes</h2>
+      <p class="project-link">
+        <a href="https://www.fourseasons2050.info/" target="_blank" rel="noopener noreferrer">
+          for more detailed info (kor): https://www.fourseasons2050.info/
+        </a>
+      </p>
+    </div>
+
+    <div class="project-body">
+      <p><strong>Four Seasons 2050</strong> is a collaborative project that integrates <strong>music</strong>, <strong>climate science</strong>, and <strong>artificial intelligence</strong>, started by AKQA. It reimagines Antonio Vivaldi’s <em>The Four Seasons</em> by applying climate change data projected for the year 2050, offering a musical interpretation of our future environment to raise awareness of the climate crisis.</p>
+      
+      <p>This climate change forecast, expressed through music, is based on the RCP 8.5 scenario. It transforms climate data from various regions around the world into a reinterpretation of Vivaldi’s original work, portraying the altered four seasons of the future.</p>
+      
+      <p>By listening to <strong>Four Seasons 2050</strong>, audiences encounter an unfamiliar, bleak, and at times unsettling soundscape—an artistic warning that invites deep reflection on the dangers of unchecked climate change.</p>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/_xA52lnp2X8?si=j5gbxQyJ1QW1LPf4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
+      <div class="project-images">
+        <img src="./components/projects/fourseasons_1.jpg" alt="Four Seasons 2050 Poster" />
+        <img src="./components/projects/fourseasons_2.jpg" alt="Four Seasons 2050 Presentation" />
+      </div>
+
+      <p><strong>I led the overall creative direction of <em>Four Seasons 2050 – Daejeon</em>,</strong> overseeing the data-driven composition and arrangement process. This included mapping climate projection data to musical parameters, generating materials using AI models such as ChatGPT and MusicGen, and shaping them into a cohesive musical structure.</p>
+
+      <details style="margin: 60px auto; max-width: 1200px; padding: 0 20px; font-size: 1.05rem; line-height: 1.8;">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem; margin-bottom: 1em;">
+          View Creative Process
+        </summary>
+      
+        <p><strong>1. Data Collection & Climate Analysis</strong><br />
+        <em>Four Seasons 2050 – Daejeon</em> began with a question: how would the vivid scenes depicted in Vivaldi’s <em>The Four Seasons</em> change in the face of accelerating climate change?</p>
+      
+        <p>To answer this, the team studied future climate projections based on the RCP 8.5 and SSP5-8.5 scenarios, analyzing changes in temperature, precipitation, heatwaves, cold spells, season lengths, biodiversity, crop yields, pest activity, and urban discomfort indices. Regional climate data from both Seoul and Daejeon were collected to highlight the specific environmental shifts expected by 2050.</p>
+      
+        <p>While Vivaldi’s original sonnets celebrate the harmony of nature and human life, our findings painted a different picture: spring grows quieter as biodiversity declines, summer and winter become more extreme and dangerous, and autumn loses its sense of abundance. <em>Four Seasons 2050</em> captures these unsettling transformations.</p>
+      
+        <p><strong>2. Algorithmic Mapping & AI Collaboration</strong><br />
+        This project is rooted in human-AI collaboration. Climate data for Daejeon and Korea was mapped onto musical parameters such as pitch, tempo, and articulation. To reflect the escalating instability of the climate, the team repeatedly tuned the hyperparameters to effectively translate these projections into musical changes.</p>
+      
+        <p>For creative inspiration, the original sonnets were reimagined using ChatGPT-4, and then fed as prompts into MusicGen—a state-of-the-art text-to-music model—to generate musical materials. These were carefully analyzed and integrated by the music team into new compositions.</p>
+      
+        <p>The regenerated sonnets also served as input for the Deforum Stable Diffusion model, producing video sketches of future Daejeon landscapes. These AI-generated visuals were used as stage backdrops, enhancing immersion and delivering the message of climate urgency.</p>
+      
+        <p><strong>3. AI-Based Composition & Arrangement</strong><br />
+        The music team reconstructed AI-generated MIDI into structured scores. Melodic lines were refined with techniques from Vivaldi’s original score (e.g., mordents, trills), and musical textures were reworked through added percussion, altered solo violin lines, and motif repetitions.</p>
+      
+        <p>Five AI-generated audio tracks—based on the reimagined sonnets—were layered within the second movement of autumn, blending electronic and acoustic sounds to portray the chaos of climate disruption.</p>
+      
+        <p>Through these musical choices, <em>Four Seasons 2050 – Daejeon</em> expresses the emotional turbulence of our climate future, while maintaining a structured musical narrative. By adding, removing, or repeating elements, the team emphasized climate-specific data-driven features within the sonic landscape.</p>
+      </details>
+      
     </div>
   </div>
 </body>
