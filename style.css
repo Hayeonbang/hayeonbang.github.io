@@ -552,3 +552,6 @@ body {
     gap: 4px;
   }
 }
+.award-title {
+  font-weight: bold;
+}
