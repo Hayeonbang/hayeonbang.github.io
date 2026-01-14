@@ -1,81 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research - Hayeon Bang</title>
+  <title>Research - Hayeon Bang (Clickable)</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Lora", serif;
+      background-color: #ffffff;
+      color: #030303;
+    }
+
+    .content-wrapper {
+      width: 80%;
+      margin: 0 auto;
+      padding: 0 100px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 100px;
+      border-bottom: 1px solid #e5e5e5;
+      font-size: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-home-icon img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-home-icon img:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: 300;
+      padding-bottom: 4px;
+    }
+
+    .nav-left .active {
+      font-weight: 700;
+    }
+
+    /* Research Section - Improved */
+    .research-wrapper {
+      max-width: 1050px;
+      margin: 50px auto 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      padding-bottom: 150px;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .research-wrapper::after {
+      content: '↓';
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #999;
+      animation: bounce 5s infinite;
+      pointer-events: none;
+      z-index: 70;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+
+    .research-item {
+      display: flex;
+      gap: 35px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background-color: white;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .research-item:hover {
+      background-color: #fafafa;
+      transform: translateX(4px);
+    }
+
+    /* Under review item - not clickable */
+    .research-item.under-review {
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .research-item.under-review:hover {
+      opacity: 0.85;
+      transform: none;
+    }
+
+    .research-img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    .research-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .research-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.4;
+      color: #111;
+    }
+
+    .research-authors {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+    }
+
+    .research-authors b {
+      color: #222;
+      font-weight: 600;
+    }
+
+    .research-authors em {
+      font-style: italic;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .paper-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .paper-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      border: 1px solid #333;
+      padding: 6px 18px;
+      border-radius: 5px;
+      background-color: #222;
+      transition: all 0.2s ease;
+      pointer-events: auto;
+    }
+
+    .paper-link:hover {
+      background-color: #444;
+      transform: translateY(-1px);
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-          <a href="about.html" class="nav-left">About</a>
-          <a href="research.html" class="nav-left active">Research</a>
-          <a href="projects.html" class="nav-left">Projects</a>
-          <a href="experiences.html" class="nav-left">Experiences</a>
-        </div>
-        <div class="nav-right">
-          <a href="index.html" class="nav-home-icon">
-            <img src="./components/home.svg" alt="Home" />
-          </a>
-        </div>
-      </nav>      
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html" class="nav-left">About</a>
+      <a href="research.html" class="nav-left active">Research</a>
+      <a href="projects.html" class="nav-left">Projects</a>
+      <a href="experiences.html" class="nav-left">Experiences</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon">
+        <img src="./components/home.svg" alt="Home" />
+      </a>
+    </div>
+  </nav>
   <div class="content-wrapper">
     <div class="research-wrapper">
-        <div class="research-item">
-            <img src="./components/research/pianobind.png" class="research-img" />
-            <div class="research-text">
-              <h3 class="research-title">PianoBind: A Multimodal Joint Embedding Model for Pop-piano Music</h3>
-              <p class="research-authors">
-                <b>Hayeon Bang</b>, Eunjin Choi, Seungheon Doh and Juhan Nam
-                <em>(ISMIR 2025)</em>
-              </p>
-              <div class="paper-links">
-                <a href="https://arxiv.org/abs/2509.04215" class="paper-link">Paper</a>
-                <a href="https://hayeonbang.github.io/PianoBind/" class="paper-link">Demo</a>
-                <a href="https://github.com/hayeonbang/PianoBind" class="paper-link">Code</a>
-              </div>
-            </div>
+      <div class="research-item" onclick="window.location.href='https://hayeonbang.github.io/PianoBind/'">
+        <img src="./components/research/pianobind.png" class="research-img" />
+        <div class="research-text">
+          <h3 class="research-title">PianoBind: A Multimodal Joint Embedding Model for Pop-piano Music</h3>
+          <p class="research-authors">
+            <b>Hayeon Bang</b>, Eunjin Choi, Seungheon Doh and Juhan Nam
+            <em>(ISMIR 2025)</em>
+          </p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/2509.04215" class="paper-link" onclick="event.stopPropagation()">Paper</a>
+            <a href="https://hayeonbang.github.io/PianoBind/" class="paper-link"
+              onclick="event.stopPropagation()">Demo</a>
+            <a href="https://github.com/hayeonbang/PianoBind" class="paper-link"
+              onclick="event.stopPropagation()">Code</a>
           </div>
-        <div class="research-item">
+        </div>
+      </div>
+      <div class="research-item under-review">
         <img src="./components/research/d3pia.png" class="research-img" />
         <div class="research-text">
-            <!-- <h3 class="research-title">D3PIA: A Discrete Denoising Diffusion Model for Piano Accompaniment Generation</h3> -->
-            <h3 class="research-title">[Under Review]</h3>
-
-            <p class="research-authors">Eunjin Choi, Hounsu Kim, <b>Hayeon Bang</b> and Juhan Nam<em> (submitted to ISMIR 2025)</em></p>
-            <div class="paper-links">
-                <a href="https://arxiv.org/" class="paper-link">Paper</a>
-                <a href="https://github.com/hayeonbang/PianoBind" class="paper-link">Code</a>
-              </div>
+          <h3 class="research-title">[Under Review]</h3>
+          <p class="research-authors">Eunjin Choi, Hounsu Kim, <b>Hayeon Bang</b> and Juhan Nam<em> (submitted to ICASSP
+              2026)</em></p>
+          <div class="paper-links">
+          </div>
         </div>
+      </div>
+      <div class="research-item" onclick="window.location.href='https://hayeonbang.github.io/Dialogue_in_Resonance/'">
+        <img src="./components/research/dialogue.png" class="research-img" />
+        <div class="research-text">
+          <h3 class="research-title">Dialogue in Resonance: an Interactive Music Piece for the Piano and Real-time
+            Automatic Transcription</h3>
+          <p class="research-authors"><b>Hayeon Bang</b>, Taegyun Kwon and Juhan Nam <em> (ICMC 2025)</em></p>
+          <div class="paper-links">
+            <a href="https://hayeonbang.github.io/Dialogue_in_Resonance/" class="paper-link"
+              onclick="event.stopPropagation()">Demo</a>
+            <a href="https://arxiv.org/abs/2505.16259" class="paper-link" onclick="event.stopPropagation()">Paper</a>
+            <a href="https://www.youtube.com/watch?v=IYdSSX17zd0" class="paper-link"
+              onclick="event.stopPropagation()">Video</a>
+          </div>
         </div>
-        <div class="research-item">
-            <img src="./components/research/dialogue.png" class="research-img" />
-            <div class="research-text">
-            <h3 class="research-title">Dialogue in Resonance: an Interactive Music Piece for the Piano and Real-time Automatic Transcription</h3>
-            <p class="research-authors"><b>Hayeon Bang</b>, Taegyun Kwon and Juhan Nam <em> (ICMC 2025)</em></p>
-            <div class="paper-links">
-                <a href="https://hayeonbang.github.io/Dialogue_in_Resonance/" class="paper-link">Demo</a>
-                <a href="https://arxiv.org/" class="paper-link">Paper</a>
-                <a href="https://www.youtube.com/watch?v=IYdSSX17zd0" class="paper-link">Video</a>
-              </div>
-            </div>
-        </div>
-        <div class="research-item">
+      </div>
+      <div class="research-item" onclick="window.location.href='https://hayeonbang.github.io/PIAST_dataset/'">
         <img src="./components/research/piast.png" class="research-img" />
         <div class="research-text">
-            <h3 class="research-title">PIAST: A Multimodal Piano Dataset with Audio, Symbolic and Text</h3>
-            <p class="research-authors"><b>Hayeon Bang</b>, Eunjin Choi, Megan Finch, Seungheon Doh, Seolhee Lee, Gyeong-hoon Lee and Juhan Nam <em> (NLP4MusA 2024)</em></p>
-            <div class="paper-links">
-                <a href="https://hayeonbang.github.io/PIAST_dataset/" class="paper-link">Demo</a>
-                <a href="https://arxiv.org/abs/2411.02551" class="paper-link">Paper</a>
-                <a href="https://github.com/hayeonbang/PIAST" class="paper-link">Code</a>
-              </div>
+          <h3 class="research-title">PIAST: A Multimodal Piano Dataset with Audio, Symbolic and Text</h3>
+          <p class="research-authors"><b>Hayeon Bang</b>, Eunjin Choi, Megan Finch, Seungheon Doh, Seolhee Lee,
+            Gyeong-hoon Lee and Juhan Nam <em> (NLP4MusA 2024)</em></p>
+          <div class="paper-links">
+            <a href="https://hayeonbang.github.io/PIAST_dataset/" class="paper-link"
+              onclick="event.stopPropagation()">Demo</a>
+            <a href="https://arxiv.org/abs/2411.02551" class="paper-link" onclick="event.stopPropagation()">Paper</a>
+            <a href="https://github.com/hayeonbang/PIAST" class="paper-link" onclick="event.stopPropagation()">Code</a>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-
+  </div>
 </body>
+
 </html>

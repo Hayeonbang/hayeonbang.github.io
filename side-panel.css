@@ -1,0 +1,273 @@
+/* Side Panel Styles */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.side-panel.active {
+    pointer-events: auto;
+}
+
+.side-panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.side-panel.active .side-panel-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.side-panel-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    max-width: 700px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    font-family: "Lora", serif;
+}
+
+.side-panel.active .side-panel-content {
+    transform: translateX(0);
+}
+
+.side-panel-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #f5f5f5;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+/* When iframe is full height, style close button differently */
+.side-panel-content .side-panel-body.panel-body-iframe~.side-panel-close {
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.side-panel-close:hover {
+    background: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.side-panel-content .side-panel-body.panel-body-iframe~.side-panel-close:hover {
+    background: rgba(51, 51, 51, 0.95);
+}
+
+/* External link button for iframe */
+.panel-external-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.panel-external-btn:hover {
+    background: rgba(51, 51, 51, 0.95);
+    transform: translateY(-2px);
+}
+
+.panel-external-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.side-panel-body {
+    padding: 60px 50px;
+}
+
+/* When showing full iframe, remove all padding */
+.side-panel-body.panel-body-iframe {
+    padding: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.panel-date {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+}
+
+.panel-content {
+    line-height: 1.8;
+    color: #333;
+}
+
+.panel-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #111;
+}
+
+.panel-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.panel-content em {
+    color: #666;
+    font-style: italic;
+}
+
+.panel-links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.panel-links a:hover {
+    background: #e5e5e5;
+    transform: translateX(4px);
+}
+
+/* Image gallery for presentations */
+.panel-image-gallery {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.panel-image-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel-image-gallery p {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Iframe styles */
+.panel-iframe-wrapper {
+    width: 100%;
+    height: calc(100vh - 200px);
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Full height iframe (no header, no padding) */
+.panel-iframe-wrapper.full-height {
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.panel-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.panel-external-link {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.panel-external-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.panel-external-link a:hover {
+    background: #555;
+    transform: translateX(4px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .side-panel-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .side-panel-body {
+        padding: 60px 30px;
+    }
+
+    .panel-content h3 {
+        font-size: 20px;
+    }
+
+    .panel-content p {
+        font-size: 15px;
+    }
+
+    .panel-iframe-wrapper {
+        height: calc(100vh - 180px);
+    }
+}
