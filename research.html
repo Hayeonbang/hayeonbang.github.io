@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CST9WYCE3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0CST9WYCE3');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research - Hayeon Bang (Clickable)</title>
@@ -211,6 +221,7 @@
       <a href="about.html" class="nav-left">About</a>
       <a href="research.html" class="nav-left active">Research</a>
       <a href="projects.html" class="nav-left">Projects</a>
+      <a href="music.html" class="nav-left">Music</a>
       <a href="experiences.html" class="nav-left">Experiences</a>
     </div>
     <div class="nav-right">
@@ -238,13 +249,16 @@
           </div>
         </div>
       </div>
-      <div class="research-item under-review">
+      <div class="research-item">
         <img src="./components/research/d3pia.png" class="research-img" />
         <div class="research-text">
-          <h3 class="research-title">[Under Review]</h3>
-          <p class="research-authors">Eunjin Choi, Hounsu Kim, <b>Hayeon Bang</b> and Juhan Nam<em> (submitted to ICASSP
-              2026)</em></p>
+          <h3 class="research-title">D3PIA: A Discrete Denoising Diffusion Model for Piano Accompaniment Generation</h3>
+          <p class="research-authors">Eunjin Choi, Hounsu Kim, <b>Hayeon Bang</b> and Juhan Nam<em> (ICASSP 2026)</em>
+          </p>
           <div class="paper-links">
+            <a href="https://arxiv.org/abs/2509.04215" class="paper-link" onclick="event.stopPropagation()">Paper</a>
+            <a href="https://jech2.github.io/D3PIA/" class="paper-link" onclick="event.stopPropagation()">Demo</a>
+            <a href="https://github.com/jech2/D3PIA" class="paper-link" onclick="event.stopPropagation()">Code</a>
           </div>
         </div>
       </div>
