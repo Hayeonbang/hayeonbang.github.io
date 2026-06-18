@@ -3,27 +3,620 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Hayeon Bang</title>
+  <title>X-Space - Hayeon Bang</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .project-header {
+      max-width: 1100px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .project-kicker {
+      margin: 0 0 16px;
+      color: #666;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-style: italic;
+      margin: 0 0 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1.25rem;
+      color: #555;
+      font-weight: 300;
+      margin: 0 0 18px;
+      line-height: 1.55;
+    }
+
+    .project-meta {
+      margin: 0 auto;
+      color: #777;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .project-body {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 44px 80px 64px;
+      box-sizing: border-box;
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .video-container {
+      width: 100%;
+      margin: 0 auto 44px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project-section {
+      margin: 44px auto 0;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: #333;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1.28fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .media-figure {
+      margin: 0;
+    }
+
+    .media-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .media-figure figcaption {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .contribution-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 24px;
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      background: #fbfbfb;
+    }
+
+    .contribution-heading {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .contribution-subheading {
+      margin: 10px 0 0;
+      color: #666;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .contribution-list,
+    .tech-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .contribution-list li,
+    .tech-list li {
+      margin-bottom: 10px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .overview-grid p {
+      margin: 0 0 16px;
+    }
+
+    .work-spotlight {
+      padding: 22px 24px;
+      border-left: 3px solid #222;
+      background: #fafafa;
+    }
+
+    .work-spotlight h3 {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .work-spotlight p {
+      margin: 0;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid #d7d7d7;
+      border-radius: 4px;
+      color: #333;
+      background: #fff;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .program-list {
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .program-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .program-credit {
+      margin: 4px 0 0;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .artist-card {
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
+
+    .artist-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .artist-affiliation {
+      margin: 0 0 18px;
+      color: #666;
+      font-size: 0.98rem;
+    }
+
+    .artist-card p {
+      margin: 0 0 16px;
+    }
+
+    .artist-card details {
+      margin-top: 18px;
+    }
+
+    .artist-card summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .artist-card details p:first-of-type {
+      margin-top: 18px;
+    }
+
+    .photo-dump {
+      column-count: 3;
+      column-gap: 12px;
+    }
+
+    .photo-dump img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 12px;
+      break-inside: avoid;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .image-lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      background: #fff;
+      color: #222;
+      font: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .project-body {
+        padding: 44px 24px 64px;
+      }
+
+      .contribution-panel,
+      .overview-grid,
+      .media-grid,
+      .program-item {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-dump {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-header {
+        margin-top: 44px;
+      }
+
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .project-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .project-body {
+        font-size: 1rem;
+      }
+
+      .contribution-panel,
+      .work-spotlight,
+      .artist-card {
+        padding: 22px;
+      }
+
+      .photo-dump {
+        column-count: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-          <a href="about.html" class="nav-left">About</a>
-          <a href="research.html" class="nav-left">Research</a>
-          <a href="projects.html" class="nav-left active">Projects</a>
-          <a href="experiences.html" class="nav-left">Experiences</a>
-        </div>
-        <div class="nav-right">
-          <a href="index.html" class="nav-home-icon">
-            <img src="./components/home.svg" alt="Home" />
-          </a>
-        </div>
-      </nav>     
-
-      </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html" class="nav-left">About</a>
+      <a href="research.html" class="nav-left">Research</a>
+      <a href="projects.html" class="nav-left active">Projects</a>
+      <a href="experiences.html" class="nav-left">Experiences</a>
     </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon">
+        <img src="./components/home.svg" alt="Home" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <header class="project-header">
+      <p class="project-kicker">KAIST MAC Lab</p>
+      <h1 class="project-title">X-Space</h1>
+      <h2 class="project-subtitle">#1 Piano Dialogue: A Musical Fantasy Beyond Ten Fingers</h2>
+      <p class="project-meta">
+        Music and Audio Computing Lab (MAC Lab)
+      </p>
+    </header>
+
+    <main class="project-body">
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/fwCwYS5k8zo?start=163"
+          title="X-Space: Duo Performance for Piano and AI Piano"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <section class="project-section">
+        <h2 class="section-title">Poster & Program Book</h2>
+        <div class="media-grid">
+          <figure class="media-figure">
+            <img src="./components/projects/xspace/poster.png" alt="X-Space performance poster" />
+            <figcaption>X-Space performance poster</figcaption>
+          </figure>
+          <figure class="media-figure">
+            <img src="./components/projects/xspace/programbook.png" alt="X-Space program book spread" />
+            <figcaption>X-Space program book</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="contribution-panel">
+          <div>
+            <h2 class="contribution-heading">My Contributions</h2>
+            <p class="contribution-subheading">Composer, music director, arranger, and repertoire curator</p>
+          </div>
+          <ul class="contribution-list">
+            <li>Composed <em>Dialogue in the Resonance</em> (2024), the opening work premiered at X-Space.</li>
+            <li>Served as music director, shaping the musical direction and performance flow of the full program.</li>
+            <li>Selected the full concert repertoire for the AI piano and human pianist collaboration.</li>
+            <li>Arranged Tchaikovsky's <em>Waltz of the Flowers</em> and Saint-Saens' <em>Danse Macabre</em> for this performance context.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Performance Overview</h2>
+        <div class="overview-grid">
+          <div>
+            <p>
+              AI pianos are not simply tools for surpassing human limitations. They have also expanded and inspired human creative musical activity.
+              <em>X-Space</em> introduces technologies that open new horizons for musical performance through KAIST MAC Lab's advanced automatic performance algorithms, presenting an AI piano that interprets and performs scores on its own.
+            </p>
+            <p>
+              The performance combines real-time music transcription and visualization with duet performances between an AI piano and a human pianist.
+              In the transcription and visualization work, audiences can intuitively experience a new encounter between music and technology as a computer interprets a human pianist's performance in real time.
+            </p>
+          </div>
+          <div>
+            <p>
+              In the duet performances, audiences encounter attempts that move across the boundary between the possible and the impossible.
+              Subtle musical ruptures beyond the reach of human hands become possible through the AI piano, while the AI piano and human pianist create music together by listening and responding to one another.
+            </p>
+            <p>
+              The performance invites audiences to imagine whether an AI piano can become a "pianist" that coexists with humans.
+              It is powered by the technology of KAIST Prof. Juhan Nam's Music and Audio Computing Lab, whose Interactive AI Performance System has enabled collaborations between internationally renowned performers and AI piano.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="work-spotlight">
+          <h3>Dialogue in the Resonance (2024)</h3>
+          <p>
+            Premiered at <em>X-Space</em>, <em>Dialogue in the Resonance</em> is a work for piano and automatic piano.
+            Using real-time transcription technology, the automatic piano reproduces, repeats, transforms, and distorts what the human pianist plays, creating an unpredictable musical dialogue.
+            Rather than serving as a simple means of replication, the automatic piano becomes a medium through which transformed sounds resonate within the flow of time and space.
+            Centered on acoustic color, the work invites listeners into a sensory experience shaped by streams and afterimages of sound, moving between chance and intention.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Technologies</h2>
+        <p class="section-intro">
+          The performance brings together real-time music understanding, visualization, and automatic performance technologies for live human-AI musical interaction.
+        </p>
+        <div class="tech-tags" aria-label="Technology keywords">
+          <span class="tech-tag">Real-time transcription and visualization</span>
+          <span class="tech-tag">AI piano and human pianist duet</span>
+          <span class="tech-tag">Automatic performance algorithm</span>
+          <span class="tech-tag">Interactive AI Performance System</span>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Program</h2>
+        <div class="program-list">
+          <div class="program-item">
+            <div>
+              <p class="program-title">Dialogue in the Resonance (2024)</p>
+              <p class="program-credit">Composition: Hayeon Bang | Technology: Taegyun Kwon </p>
+            </div>
+            <p class="program-credit">Original work for piano and automatic piano, premiered at X-Space.</p>
+          </div>
+
+          <div class="program-item">
+            <div>
+              <p class="program-title">Tea for Two</p>
+              <p class="program-credit">Vincent Youmans, arranged by Art Tatum</p>
+            </div>
+            <p class="program-credit">A jazz standard reimagined through the vocabulary of human-AI piano performance.</p>
+          </div>
+
+          <div class="program-item">
+            <div>
+              <p class="program-title">The Nutcracker Suite: Waltz of the Flowers, Op. 71a</p>
+              <p class="program-credit">Pyotr Ilyich Tchaikovsky, arranged by Hayeon Bang</p>
+            </div>
+            <p class="program-credit">Arranged for the expressive and technical possibilities of the AI piano performance system.</p>
+          </div>
+
+          <div class="program-item">
+            <div>
+              <p class="program-title">Danse Macabre, Op. 40</p>
+              <p class="program-credit">Camille Saint-Saens, arranged by Hayeon Bang</p>
+            </div>
+            <p class="program-credit">Arranged to explore virtuosic gestures beyond the physical limits of ten fingers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Artist</h2>
+        <div class="artist-card">
+          <h3>Jonghwa Park</h3>
+          <p class="artist-affiliation">Seoul National University, AIRC</p>
+          <p>
+            Jonghwa Park has built a distinctive musical world through a lineage of pianism that spans Japan, Germany, and the broader European tradition.
+            His artistry has been shaped by studies and encounters with influential teachers and legendary musicians, as well as by a continuing interest in the relationship between classical music, contemporary society, and emerging technology.
+          </p>
+          <details>
+            <summary>Read full artist bio</summary>
+            <p>
+              Park moved to Japan in childhood and studied with Aiko Iguchi, a major figure in Japanese piano music.
+              Through this training, he inherited the pianistic lineage and musical philosophy of Leonid Kreutzer and Leo Kochanski, who were active as performers and educators across East Asia in the early twentieth century.
+              He later studied in Munich, Germany, where he encountered Eliso Virsaladze, connected to another branch of pianism extending from Anna Yesipova and Yakov Zak.
+              Within this flow of knowledge across time and place, Park developed a musical language that is both highly individual and unmistakably his own.
+            </p>
+            <p>
+              During his years in Europe, Park had opportunities to engage with legendary musicians including Karl Ulrich Schnabel, son of Artur Schnabel, Dmitri Bashkirov, Fou Ts'ong, Leon Fleisher, Alicia de Larrocha, Martha Argerich, and Pierre Boulez.
+              These encounters became important turning points not only in his musical knowledge, but also in his understanding of how to live as a musician.
+              They also contributed to the wide range of cultural colors in his music, shaped by Japan, the United States, Italy, Spain, Germany, France, and beyond.
+            </p>
+            <p>
+              After achieving success at several international competitions, including the Queen Elisabeth Competition in Belgium, Park gave recitals at leading venues around the world such as the Concertgebouw in Amsterdam and the Palais des Beaux-Arts in Belgium.
+              Deeply committed to chamber music, he has performed with musicians including Joshua Bell, Daniel Harding, and Jean-Yves Thibaudet.
+              More recently, he has planned chamber music festivals and other projects that explore the relationship between classical music and contemporary society.
+            </p>
+            <p>
+              Park has also worked beyond the traditional frame of concert-hall performance, planning and participating in artistic projects in a variety of contemporary spaces.
+              His public-facing projects range from installation art that places pianos in urban spaces for anyone to play, to <em>Run, Piano</em>, a project that brings a Steinway piano to culturally underserved regions across Korea.
+              Through these activities, he continues to share the value of music with broader audiences.
+            </p>
+            <p>
+              Since joining the faculty of Seoul National University's College of Music in 2007, Park has devoted himself to educating the next generation of musicians.
+              He is also interested in building interdisciplinary knowledge and has participated in research on communication between art and science.
+              Recently, through projects based on collaborative research with KAIST, he has helped demonstrate new possibilities for classical music amid rapid technological change.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Photos</h2>
+        <div class="photo-dump">
+          <img src="./components/projects/xspace/IMG_4227.webp" alt="X-Space performance photo 1" loading="lazy" />
+          <img src="./components/projects/xspace/IMG_4254.webp" alt="X-Space performance photo 2" loading="lazy" />
+          <img src="./components/projects/xspace/IMG_4277.webp" alt="X-Space performance photo 3" loading="lazy" />
+          <img src="./components/projects/xspace/IMG_4333.webp" alt="X-Space performance photo 4" loading="lazy" />
+          <img src="./components/projects/xspace/IMG_4338.webp" alt="X-Space performance photo 5" loading="lazy" />
+          <img src="./components/projects/xspace/IMG_4272.webp" alt="X-Space performance photo 6" loading="lazy" />
+        </div>
+      </section>
+    </main>
   </div>
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close image">X</button>
+    <img class="lightbox-image" src="" alt="" />
+  </div>
+  <script>
+    const expandableImages = document.querySelectorAll('.media-figure img, .photo-dump img');
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    };
+
+    expandableImages.forEach((image) => {
+      image.addEventListener('click', () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target === lightboxImage) {
+        closeLightbox();
+      }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
