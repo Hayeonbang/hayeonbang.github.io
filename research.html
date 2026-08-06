@@ -156,6 +156,13 @@
       border-radius: 4px;
     }
 
+    .research-img.landscape {
+      width: 320px;
+      height: 180px;
+      border: 1px solid #eeeeee;
+      background: #ffffff;
+    }
+
     .research-text {
       flex: 1;
       display: flex;
@@ -212,6 +219,32 @@
       background-color: #444;
       transform: translateY(-1px);
     }
+
+    @media (max-width: 760px) {
+      .content-wrapper {
+        width: auto;
+        padding: 0 20px;
+      }
+
+      .navbar {
+        padding: 16px 20px;
+      }
+
+      .nav-left {
+        gap: 16px;
+      }
+
+      .research-item {
+        flex-direction: column;
+      }
+
+      .research-img,
+      .research-img.landscape {
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+      }
+    }
   </style>
 </head>
 
@@ -232,6 +265,23 @@
   </nav>
   <div class="content-wrapper">
     <div class="research-wrapper">
+      <div class="research-item">
+        <img src="./components/research/vocalcoachbench.webp" class="research-img landscape"
+          alt="VocalCoachBench dataset structure and evaluation overview" />
+        <div class="research-text">
+          <h3 class="research-title">VocalCoachBench: Benchmarking Audio-Language Models on Expert Feedback for
+            Singing</h3>
+          <p class="research-authors"><b>Hayeon Bang</b>, Hounsu Kim, Wonil Kim and Juhan Nam
+            <em>[Under Review]</em>
+          </p>
+          <div class="paper-links">
+            <a href="https://huggingface.co/datasets/vocalcoachbench/vocalcoachbench-review" class="paper-link"
+              target="_blank" rel="noopener noreferrer">Dataset</a>
+            <a href="https://anonymous.4open.science/r/vocalcoachbench-C641/" class="paper-link" target="_blank"
+              rel="noopener noreferrer">Code</a>
+          </div>
+        </div>
+      </div>
       <div class="research-item" onclick="window.location.href='https://hayeonbang.github.io/PianoBind/'">
         <img src="./components/research/pianobind.png" class="research-img" />
         <div class="research-text">
