@@ -1,5 +1,21 @@
 // News details data
 const newsDetails = {
+  pitchin2026: {
+    title: "PitchIn on arXiv",
+    date: "October, 2026",
+    tag: "Research",
+    tagClass: "tag-research",
+    type: "iframe", // Preprint release → demo page
+    iframeUrl: "https://hayeonbang.github.io/PitchIn/"
+  },
+  icassp2026: {
+    title: "Paper Accepted at ICASSP 2026",
+    date: "January, 2026",
+    tag: "Research",
+    tagClass: "tag-research",
+    type: "iframe", // Paper acceptance → demo page
+    iframeUrl: "https://jech2.github.io/D3PIA/"
+  },
   ismir2025: {
     title: "Paper Accepted at ISMIR 2025",
     date: "June, 2025",
@@ -47,15 +63,10 @@ const newsDetails = {
     type: "content", // Presentation → text with images
     content: `
       <h3>PIAST Dataset Presentation</h3>
-      <p>I presented our PIAST dataset at NLP4MusA 2024 (NLP for Music Analysis workshop).</p>
-      <p>The presentation covered our work on creating a comprehensive dataset for 
-      piano performance analysis with symbolic and textual annotations.</p>
-      
-      <div class="panel-image-gallery">
-        <!-- Add your presentation images here -->
-        <p><em>Presentation photos and slides coming soon...</em></p>
-      </div>
-      
+      <p>I presented our PIAST dataset at NLP4MusA 2024, the 3rd Workshop on NLP for Music and Audio.</p>
+      <p>The presentation introduced PIAST, a solo piano dataset that pairs audio with
+      transcribed MIDI and text tags from a piano-specific taxonomy, including expert annotations.</p>
+
       <div class="panel-links">
         <a href="https://hayeonbang.github.io/PIAST_dataset/" target="_blank" rel="noopener noreferrer">
           🔗 Visit Project Page
@@ -139,8 +150,8 @@ newsItems.forEach(item => {
   }
 
   item.addEventListener('click', (e) => {
-    // Don't open panel if clicking on a link
-    if (e.target.tagName === 'A') {
+    // Don't open panel if clicking on a link (or on text inside one)
+    if (e.target.closest('a')) {
       return;
     }
 

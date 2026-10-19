@@ -1,9 +1,80 @@
-/* ---------- Home (index.html 전용) ---------- */
+/* ---------- Base ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", serif;
+  background-color: #ffffff;
+  color: #030303;
+}
+
+/* Content column is 80% of the window, as before; on narrow windows it never gets closer
+   to the edges than the gutter, so the page cannot scroll sideways.
+   The navbar uses the same numbers so its links line up with the page content. */
+.content-wrapper,
+.section-wrapper {
+  width: min(80%, 100% - 2 * clamp(20px, 6vw, 100px));
+  margin: 0 auto;
+}
+
+/* ---------- Navigation ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px max(clamp(20px, 6vw, 100px), 10%);
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 16px;
+}
+
+.nav-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 40px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 300;
+  padding-bottom: 4px;
+}
+
+.nav-left a:hover {
+  color: #555;
+}
+
+.nav-left .active {
+  font-weight: 700;
+}
+
+.nav-home-icon {
+  display: flex;
+}
+
+.nav-home-icon img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.nav-home-icon img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* ---------- Home (index.html) ---------- */
 .container-home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 40px;
   gap: 80px;
   box-sizing: border-box;
@@ -33,24 +104,20 @@
   color: #4f4f4f;
   font-size: 16px;
   text-decoration: underline;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
-.button-home {
-  width: 120px;
-  height: 32px;
-  border-radius: 6px;
-  background-color: #191919;
-  color: white;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  font-family: "Lora";
+/* The name and the photo are plain links to About, so search engines can follow them */
+.name-home a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .image-home {
+  display: block;
   width: 357px;
   height: 496px;
+  flex-shrink: 0;
   border-radius: 3px;
   background-image: url('./components/profile.webp');
   background-position: center;
@@ -58,85 +125,24 @@
   background-repeat: no-repeat;
 }
 
-/* Reset */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Lora", serif;
-  background-color: #ffffff;
-  color: #030303;
-}
-
-.content-wrapper {
-  width: 80%;
-  margin: 0 auto;
-  padding: 0 100px;
-}
-
-/* Navigation */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 100px;
-  border-bottom: 1px solid #e5e5e5;
-  font-size: 16px;
-}
-
-.nav-left {
-  display: flex;
-  gap: 40px;
-}
-
-.nav-right {
-  display: flex;
-  gap: 40px;
-}
-
-.nav-home-icon img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
-}
-
-.nav-home-icon img:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-
-.nav-left a {
-  text-decoration: none;
-  color: #000000;
-  font-weight: 300;
-  padding-bottom: 4px;
-}
-
-
-.nav-left .active {
-  font-weight: 700;
-  /* border-bottom: 1px solid #000; */
-}
-
-/* About Section */
+/* ---------- About ---------- */
 .about-section {
   display: flex;
-  justify-content: left;
   align-items: flex-start;
-  padding: 60px 0px 10px;
+  padding: 60px 0 10px;
   gap: 48px;
 }
 
 .profile-img {
+  display: block;
   width: 224px;
   height: 275px;
   object-fit: cover;
-  border-radius: 0px;
 }
 
 .profile-text {
   width: 75%;
+  min-width: 0;
 }
 
 .name-about {
@@ -148,36 +154,30 @@ body {
 .description-about {
   font-size: 16px;
   line-height: 37px;
-  margin-bottom: 23px;
+  margin: 0 0 23px;
 }
 
 .description-about a {
   color: inherit;
-  /* 텍스트 색상과 동일하게 */
   text-decoration: underline;
-  /* 밑줄은 유지 (또는 none 으로 제거 가능) */
   text-decoration-color: #aaa;
-  /* 밑줄 색상을 부드럽게 */
+  text-underline-offset: 3px;
   transition: color 0.3s ease, text-decoration-color 0.3s ease;
 }
 
 .description-about a:hover {
   color: #555;
-  /* 마우스 올렸을 때 약간 진하게 */
   text-decoration-color: #555;
 }
 
-/* 키워드 링크 (밑줄 제거) */
-.no-underline {
+.description-about a.no-underline {
   text-decoration: none;
 }
 
-.no-underline:hover {
-  text-decoration: none;
+.description-about a.no-underline:hover {
   color: #555;
 }
 
-/* CV Button */
 .button-about {
   display: inline-block;
   padding: 3px 25px;
@@ -196,322 +196,324 @@ body {
   background-color: #555;
 }
 
+/* CV button with small, quiet profile links beside it; each link sits in a square box
+   as tall as the CV button (26px) so the row lines up */
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
 
-/* News Section - Timeline Style */
+.about-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  color: #8a8a8a;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.about-link:hover {
+  color: #333;
+  border-color: #999;
+  background-color: #f6f6f6;
+}
+
+.about-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- News ----------
+   Compact list grouped by year: the year sits in a left column, each row reads month · badge · text.
+   The badge names the venue or source; its style marks the kind of news
+   (paper accepted, preprint, talk, degree milestone, award). */
 .news-section {
-  margin-top: 50px;
-  margin-bottom: 40px;
+  margin: 48px 0 56px;
+  padding: 0 32px;
 }
 
 .news-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin: 0 0 14px;
+}
+
+/* Year, month and badge sit under the About photo; the longest badge (NLP4MusA, ~75px) ends just
+   inside the photo's right edge. Inside the 32px section inset: year 60 + gap 16 + month 32 + gap 6
+   puts badges at 114, so they end by 32 + 114 + 75 = 221 < 224 (photo width).
+   The text starts at 32 + 114 + 152 + 6 = 304. */
+.news-year {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 0 16px;
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.news-year-label {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #111;
 }
 
 .news-list {
-  position: relative;
-  padding-left: 50px;
-}
-
-/* Timeline vertical line */
-.news-list::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: #d0d0d0;
-}
-
-/* News Section - Timeline Style */
-.news-section {
-  margin-top: 50px;
-  margin-bottom: 40px;
-}
-
-.news-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.news-list {
-  position: relative;
-  padding-left: 50px;
-}
-
-.news-list::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: #d0d0d0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .news-item {
-  position: relative;
   display: grid;
-  grid-template-columns: 140px 1fr auto;
-  align-items: start;
-  gap: 18px;
-  padding: 10px 16px;
-  margin-bottom: 4px;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  grid-template-columns: 32px 152px 1fr;
+  align-items: baseline;
+  gap: 6px;
+  margin: 0 -10px;
+  padding: 7px 10px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .news-item:hover {
-  background-color: #fafafa;
-  transform: translateX(8px);
+  background-color: #f5f6f8;
 }
 
-.news-item::before {
-  content: '';
-  position: absolute;
-  left: -44px;
-  top: 14px;
-  width: 14px;
-  height: 14px;
-  background: white;
-  border: 3px solid #666;
-  border-radius: 50%;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-
-.news-item:hover::before {
-  background: #333;
-  border-color: #333;
-  transform: scale(1.3);
-  box-shadow: 0 0 0 4px rgba(51, 51, 51, 0.1);
-}
-
-/* Non-clickable items */
 .news-item.no-link {
   cursor: default;
 }
 
 .news-item.no-link:hover {
   background-color: transparent;
-  transform: none;
 }
 
-.news-item.no-link:hover::before {
-  background: white;
-  border-color: #666;
-  transform: scale(1);
-  box-shadow: none;
+/* Rows that open the detail panel end with a small arrow right after the text */
+.news-item:not(.no-link) .news-content::after {
+  content: '\2192';
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 13px;
+  color: #bbb;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.news-item:not(.no-link):hover .news-content::after {
+  color: #333;
+  transform: translateX(2px);
 }
 
 .news-date {
-  font-size: 14px;
-  color: #666;
-  font-weight: 600;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
 }
 
-.news-content {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.news-tag {
-  font-size: 13px;
-  padding: 6px 14px;
-  font-weight: 600;
-  border-radius: 6px;
+.news-badge {
+  justify-self: start;
+  padding: 1px 6px;
+  border: 1px solid var(--badge-line);
+  border-radius: 3px;
+  background: var(--badge-tint);
+  color: var(--badge-ink);
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
   white-space: nowrap;
 }
 
-.tag-research {
-  background: #e8f4f8;
-  color: #0066cc;
+/* Black and white, like the rest of the site: accepted papers filled black, preprints outlined
+   in grey, talks and degrees in light grey, awards outlined in black */
+.news-badge.is-accepted {
+  --badge-tint: #1a1a1a;
+  --badge-line: #1a1a1a;
+  --badge-ink: #ffffff;
 }
 
-.tag-awards {
-  background: #fef3e8;
-  color: #cc6600;
+.news-badge.is-preprint {
+  --badge-tint: #ffffff;
+  --badge-line: #a8a8a8;
+  --badge-ink: #1a1a1a;
 }
 
-.tag-milestone {
-  background: #e8f8f0;
-  color: #00994d;
+.news-badge.is-talk,
+.news-badge.is-milestone {
+  --badge-tint: #efefef;
+  --badge-line: #efefef;
+  --badge-ink: #333333;
 }
 
-.news-date {
-  font-size: 14px;
-  color: #666;
-  font-weight: 600;
+.news-badge.is-award {
+  --badge-tint: #ffffff;
+  --badge-line: #1a1a1a;
+  --badge-ink: #1a1a1a;
 }
 
 .news-content {
+  margin: 0;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.55;
+  min-width: 0;
 }
 
 .news-content a {
   color: inherit;
   text-decoration: underline;
   text-decoration-color: #ccc;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .news-content a:hover {
-  color: #333;
-  text-decoration-color: #333;
+  color: #555;
+  text-decoration-color: #555;
 }
 
-.news-content u {
-  text-decoration: underline;
-  text-decoration-color: #ccc;
-  text-underline-offset: 2px;
-}
-
+/* Category label in the side panel header */
 .news-tag {
-  font-size: 13px;
-  padding: 6px 14px;
-  font-weight: 600;
-  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
   white-space: nowrap;
 }
 
-.tag-research {
-  background: #e8f4f8;
-  color: #0066cc;
-}
-
-.tag-awards {
-  background: #fef3e8;
-  color: #cc6600;
-}
-
-.tag-milestone {
-  background: #e8f8f0;
-  color: #00994d;
-}
-
-.news-date {
-  font-size: 14px;
-  color: #666;
-}
-
-.news-content {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.news-content a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: #ccc;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
-}
-
-.news-content a:hover {
-  color: #333;
-  text-decoration-color: #333;
-}
-
-.news-tag {
-  font-size: 13px;
-  padding: 4px 12px;
-  font-weight: 600;
-  border-radius: 6px;
-  white-space: nowrap;
-}
-
-.tag-research {
-  background: #f3f3f3;
-  color: #333;
-}
-
-.tag-awards {
-  background: #f9e1e1;
-  color: #333;
-}
-
-.tag-works {
-  background: #e3eff4;
-  color: #333;
-}
-
-.tag-milestone {
-  background: #e5f6fe;
-  color: #333;
-}
-
-
-/* Research Section */
+/* ---------- Research ----------
+   Original card design, with thin dividers between papers and every thumbnail in the same
+   white frame with a hairline border, so diagrams of different shapes line up and their own
+   white backgrounds blend into the frame. */
 .research-wrapper {
-  width: 80%;
-  margin: 60px auto;
+  max-width: 1050px;
+  margin: 40px auto 80px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .research-item {
   display: flex;
-  gap: 40px;
+  gap: 35px;
   align-items: flex-start;
+  padding: 22px 20px;
+  border-bottom: 1px solid #ececec;
+  transition: all 0.3s ease;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.research-item:last-child {
+  border-bottom: none;
+}
+
+/* Hover rows use a slightly cool grey; a neutral grey next to the white thumbnail frames reads as yellowish */
+.research-item:hover {
+  background-color: #f5f6f8;
+  transform: translateX(4px);
 }
 
 .research-img {
-  width: 180px;
-  height: 180px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 150px;
+  padding: 12px;
   object-fit: contain;
+  flex-shrink: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  background-color: #ffffff;
 }
 
 .research-text {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .research-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin: 0;
+  line-height: 1.4;
+  color: #111;
 }
 
 .research-authors {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
 }
 
-.research-authors em {
-  font-style: italic;
-  color: #666;
+.research-authors b {
+  color: #222;
+  font-weight: 600;
 }
+
+/* Venue badge at the end of the author line: a light grey outline, the same for every paper
+   (published venues and "Under Review") */
+.venue {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border: 1px solid #a8a8a8;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #555555;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+
 
 .paper-links {
   display: flex;
-  gap: 20px;
-  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
 }
 
 .paper-link {
-  color: #fff8f8;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14px;
-  border: 1px solid #ccc;
-  padding: 2px 20px;
-  border-radius: 6px;
-  background-color: #0b0b0b;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  border: 1px solid #333;
+  padding: 6px 18px;
+  border-radius: 5px;
+  background-color: #222;
+  transition: all 0.2s ease;
 }
 
 .paper-link:hover {
-  background-color: #1a1a1a;
-  opacity: 0.8;
+  background-color: #444;
+  transform: translateY(-1px);
 }
-
-
 
 /* ---------- Works Section ---------- */
 .works-grid {
@@ -574,9 +576,7 @@ body {
 
 /* ---------- Experience Page Sections ---------- */
 .section-wrapper {
-  width: 80%;
-  margin: 30px auto;
-  padding: 0 100px;
+  margin-block: 30px;
 }
 
 .section-title {
@@ -684,11 +684,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .content-wrapper,
+  .section-wrapper {
+    width: calc(100% - 40px);
+  }
+
   .container-home {
     flex-direction: column;
-    padding: 20px;
-    gap: 40px;
-    height: auto;
+    padding: 40px 20px;
+    gap: 32px;
   }
 
   .text-block-home {
@@ -696,30 +700,26 @@ body {
     text-align: center;
   }
 
-  .image-home {
-    width: 80%;
-    height: auto;
-    max-width: 300px;
+  .name-home {
+    font-size: 44px;
+    line-height: 1.3;
   }
 
-  .content-wrapper,
-  .section-wrapper,
-  .research-wrapper {
-    width: 90%;
-    padding: 0 20px;
+  .image-home {
+    order: -1;
+    width: min(80%, 300px);
+    height: auto;
+    aspect-ratio: 357 / 496;
   }
 
   .navbar {
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px 20px;
+    align-items: flex-start;
+    padding: 14px 20px;
   }
 
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
+  .nav-left {
+    gap: 6px 18px;
+    font-size: 15px;
   }
 
   .about-section {
@@ -737,25 +737,67 @@ body {
     width: 100%;
   }
 
+  .about-actions {
+    justify-content: center;
+  }
+
+  .news-section {
+    margin: 40px 0 48px;
+    padding: 0;
+  }
+
+  .news-year {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .news-year-label {
+    padding-top: 0;
+  }
+
+  .news-item {
+    grid-template-columns: 30px auto 1fr;
+    gap: 4px 10px;
+    margin: 0 -8px;
+    padding: 6px 8px;
+  }
+
+  .news-content {
+    grid-column: 2 / -1;
+    grid-row: 2;
+  }
+
   .works-grid {
     grid-template-columns: 1fr;
   }
 
+  .research-wrapper {
+    margin-top: 16px;
+  }
+
   .research-item {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .research-item:hover {
+    transform: none;
   }
 
   .research-img {
-    width: 60%;
+    width: 100%;
     height: auto;
-    max-width: 200px;
+    max-height: 260px;
   }
 
   .experience-block {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .experience-left {
+    max-width: 100%;
   }
 
   .award-row {
@@ -769,12 +811,6 @@ body {
   font-weight: bold;
 }
 
-
-
-.email-home {
-  pointer-events: auto;
-  margin-bottom: 16px;
-}
 
 /* Social Icons on Main Page */
 .social-icons-home {
@@ -830,6 +866,7 @@ body {
 }
 
 .music-tab {
+  font-family: inherit;
   font-size: 15px;
   font-weight: 400;
   color: #666;

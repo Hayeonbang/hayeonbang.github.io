@@ -56,7 +56,8 @@ document.querySelectorAll('.video-thumbnail').forEach(element => {
 document.querySelectorAll('[data-modal-type="image"]').forEach(element => {
     element.addEventListener('click', function () {
         const img = this.querySelector('img');
-        const imgSrc = img.getAttribute('src');
+        // Open the full-size score when there is one; the card itself shows a small thumbnail
+        const imgSrc = img.dataset.full || img.getAttribute('src');
         const imgAlt = img.getAttribute('alt');
 
         modalBody.innerHTML = `

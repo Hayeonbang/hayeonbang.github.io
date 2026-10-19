@@ -15,14 +15,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hayeon Bang</title>
+  <meta name="description" content="Hayeon Bang (방하연) is a Ph.D. student at the KAIST Music and Audio Computing Lab and a composer, working on educational music AI, vocal coaching feedback, and human-AI musical interaction." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hayeon Bang" />
+  <meta property="og:description" content="Hayeon Bang (방하연) is a Ph.D. student at the KAIST Music and Audio Computing Lab and a composer, working on educational music AI, vocal coaching feedback, and human-AI musical interaction." />
+  <meta property="og:url" content="https://hayeonbang.github.io/" />
+  <link rel="canonical" href="https://hayeonbang.github.io/" />
+  <meta property="og:image" content="https://hayeonbang.github.io/components/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./components/favicon-32.png" />
+  <link rel="apple-touch-icon" href="./components/apple-touch-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <!-- The home photo is a CSS background, so ask for it before the stylesheet is parsed -->
+  <link rel="preload" as="image" href="./components/profile.webp" fetchpriority="high" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://hayeonbang.github.io/#website",
+        "name": "Hayeon Bang",
+        "url": "https://hayeonbang.github.io/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://hayeonbang.github.io/#person",
+        "name": "Hayeon Bang",
+        "alternateName": "방하연",
+        "url": "https://hayeonbang.github.io/",
+        "image": "https://hayeonbang.github.io/components/profile.webp",
+        "jobTitle": "Ph.D. Student",
+        "email": "mailto:hayeonbang@kaist.ac.kr",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Music and Audio Computing Lab, KAIST",
+          "url": "https://mac.kaist.ac.kr/"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "KAIST"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Yonsei University"
+          }
+        ],
+        "knowsAbout": [
+          "Music Information Retrieval",
+          "Educational Music AI",
+          "Multimodal Music Representation",
+          "Human-AI Musical Interaction",
+          "Music Composition"
+        ],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=YNYBDmQAAAAJ",
+          "https://github.com/hayeonbang",
+          "https://www.linkedin.com/in/hayeon-bang-836a952a0/",
+          "https://www.youtube.com/@hayeonbang"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
   <div class="container-home">
     <div class="text-block-home" onclick="window.location.href='about.html'" style="cursor: pointer;">
-      <h1 class="name-home">Hayeon Bang</h1>
+      <h1 class="name-home"><a href="about.html">Hayeon Bang</a></h1>
       <p class="role-home">Researcher, Composer</p>
       <a href="mailto:hayeonbang@kaist.ac.kr" class="email-home"
         onclick="event.stopPropagation()">hayeonbang@kaist.ac.kr</a>
@@ -58,7 +121,7 @@
         </a>
       </div>
     </div>
-    <div class="image-home" onclick="window.location.href='about.html'" style="cursor: pointer;"></div>
+    <a href="about.html" class="image-home" aria-label="About Hayeon Bang"></a>
   </div>
 </body>
 
