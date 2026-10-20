@@ -48,7 +48,42 @@ body {
 
 .nav-right {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* EN | KO switch next to the home icon (About and Experiences only); the current language is bold */
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.nav-lang a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-lang a:hover {
+  color: #222;
+}
+
+.nav-lang a.active {
+  color: #111;
+  font-weight: 700;
+}
+
+.nav-lang-sep {
+  color: #ccc;
+}
+
+/* Korean pages: Lora for Latin text, Noto Sans KR for Hangul; keep Korean words whole when wrapping */
+.lang-ko {
+  font-family: "Lora", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
 }
 
 .nav-left a {
