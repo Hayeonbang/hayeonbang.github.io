@@ -1,5 +1,13 @@
 // News details data
 const newsDetails = {
+  jarasum2026: {
+    title: "Jazz AI Lounge at Jarasum Jazz Festival",
+    date: "October, 2026",
+    tag: "Project",
+    tagClass: "tag-works",
+    type: "iframe", // Project → project page
+    iframeUrl: "jarasum.html"
+  },
   pitchin2026: {
     title: "PitchIn on arXiv",
     date: "October, 2026",

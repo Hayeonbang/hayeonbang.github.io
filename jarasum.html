@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jazz AI Lounge - Hayeon Bang</title>
+  <meta name="description" content="Jazz AI Lounge at the 23rd Jarasum Jazz Festival (2026): an AI pianist and real-time accompaniment systems by KAIST MAC Lab performing 26 pieces with 12 jazz artists." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jazz AI Lounge - Hayeon Bang" />
+  <meta property="og:description" content="Jazz AI Lounge at the 23rd Jarasum Jazz Festival (2026): an AI pianist and real-time accompaniment systems by KAIST MAC Lab performing 26 pieces with 12 jazz artists." />
+  <meta property="og:url" content="https://hayeonbang.github.io/jarasum.html" />
+  <link rel="canonical" href="https://hayeonbang.github.io/jarasum.html" />
+  <meta property="og:image" content="https://hayeonbang.github.io/components/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./components/favicon-32.png" />
+  <link rel="apple-touch-icon" href="./components/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .project-header {
+      max-width: 1100px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .project-kicker {
+      margin: 0 0 16px;
+      color: #666;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-style: italic;
+      margin: 0 0 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1.25rem;
+      color: #555;
+      font-weight: 300;
+      margin: 0 0 18px;
+      line-height: 1.55;
+    }
+
+    .project-meta {
+      margin: 0 auto;
+      color: #777;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .project-body {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 44px 80px 64px;
+      box-sizing: border-box;
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .video-container {
+      width: 100%;
+      margin: 0 auto 44px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project-section {
+      margin: 44px auto 0;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: #333;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1.28fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .media-figure {
+      margin: 0;
+    }
+
+    .media-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .media-figure figcaption {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .contribution-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 24px;
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      background: #fbfbfb;
+    }
+
+    .contribution-heading {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .contribution-subheading {
+      margin: 10px 0 0;
+      color: #666;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .contribution-list,
+    .tech-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .contribution-list li,
+    .tech-list li {
+      margin-bottom: 10px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .overview-grid p {
+      margin: 0 0 16px;
+    }
+
+    .work-spotlight {
+      padding: 22px 24px;
+      border-left: 3px solid #222;
+      background: #fafafa;
+    }
+
+    .work-spotlight h3 {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .work-spotlight p {
+      margin: 0;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid #d7d7d7;
+      border-radius: 4px;
+      color: #333;
+      background: #fff;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .program-list {
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .program-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .program-credit {
+      margin: 4px 0 0;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .artist-card {
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
+
+    .artist-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .artist-affiliation {
+      margin: 0 0 18px;
+      color: #666;
+      font-size: 0.98rem;
+    }
+
+    .artist-card p {
+      margin: 0 0 16px;
+    }
+
+    .artist-card details {
+      margin-top: 18px;
+    }
+
+    .artist-card summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .artist-card details p:first-of-type {
+      margin-top: 18px;
+    }
+
+    .photo-dump {
+      column-count: 3;
+      column-gap: 12px;
+    }
+
+    .photo-dump img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 12px;
+      break-inside: avoid;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .image-lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      background: #fff;
+      color: #222;
+      font: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .project-body {
+        padding: 44px 24px 64px;
+      }
+
+      .contribution-panel,
+      .overview-grid,
+      .media-grid,
+      .program-item {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-dump {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-header {
+        margin-top: 44px;
+      }
+
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .project-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .project-body {
+        font-size: 1rem;
+      }
+
+      .contribution-panel,
+      .work-spotlight,
+      .artist-card {
+        padding: 22px;
+      }
+
+      .photo-dump {
+        column-count: 1;
+      }
+    }
+    /* Jazz AI Lounge page: full-width stage photo, a quiet line of numbers, press links */
+    .hero-figure {
+      margin: 0 0 12px;
+    }
+
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: zoom-in;
+    }
+
+    .hero-figure figcaption {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.94rem;
+      line-height: 1.4;
+    }
+
+    .press-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .press-list li {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e4e4e4;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .press-outlet {
+      color: #666;
+    }
+
+    .press-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: #ccc;
+      text-underline-offset: 3px;
+    }
+
+    .press-list a:hover {
+      text-decoration-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .press-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html" class="active" aria-current="page">Projects</a>
+      <a href="music.html">Music</a>
+      <a href="experiences.html">Experiences</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon" aria-label="Home">
+        <img src="./components/home.svg" alt="" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <header class="project-header">
+      <p class="project-kicker">KAIST MAC Lab × Jarasum Jazz Festival</p>
+      <h1 class="project-title">Jazz AI Lounge</h1>
+      <h2 class="project-subtitle">Human–AI Jazz at the 23rd Jarasum Jazz Festival</h2>
+      <p class="project-meta">October 9–11, 2026 · Jarasum Island, Gapyeong</p>
+    </header>
+
+    <main class="project-body">
+      <figure class="hero-figure">
+        <img src="./components/projects/jarasum/stage.webp" alt="The Jazz AI Lounge stage: jazz pianist Daeuk Heo and AI pianist Scott on screen" />
+        <figcaption>Jazz pianist Daeuk Heo and AI pianist Scott on the Jazz AI Lounge stage. Photo: KAIST</figcaption>
+      </figure>
+
+      <section class="project-section">
+        <h2 class="section-title">Program Book</h2>
+        <figure class="media-figure" style="max-width: 420px;">
+          <img src="./components/projects/jarasum/programbook.webp" alt="Jazz AI Lounge page in the 23rd Jarasum Jazz Festival program book" />
+          <figcaption>Jazz AI Lounge in the festival program book</figcaption>
+        </figure>
+      </section>
+
+      <section class="project-section">
+        <div class="contribution-panel">
+          <div>
+            <h2 class="contribution-heading">My Contributions</h2>
+            <p class="contribution-subheading">Composer and editor of the AI pianist's generated passages, stage planning, and on-site operation</p>
+          </div>
+          <ul class="contribution-list">
+            <li>Composed the AI pianist Scott's generated passages with AI, from planning what each passage would do to generating the material.</li>
+            <li>Reworked the generated material extensively, editing it into stage-ready parts played on the Yamaha Disklavier.</li>
+            <li>Chose where each passage entered the piece, so Scott's playing fit around the human performers.</li>
+            <li>Took part in planning the overall project and the structure and flow of the stage program.</li>
+            <li>Took part in the recording sessions with the artists.</li>
+            <li>Worked on site operations throughout the three-day festival.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Performance Overview</h2>
+        <div class="overview-grid">
+          <div>
+            <p>
+              Jazz lives on improvisation: players change the tempo, decide how many solo choruses to take on the spot,
+              and invent new melodies, so the same tune is never played the same way twice. At the <em>Jazz AI Lounge</em>,
+              a new stage at the 23rd Jarasum Jazz Festival, KAIST MAC Lab brought AI systems that listen to live playing and
+              respond in real time.
+            </p>
+            <p>
+              Over three days, twelve jazz artists played twelve sets and 26 pieces with AI. An AI pianist took over the
+              piano when a human player stopped, and accompaniment systems built bass, drum and piano parts around improvised
+              playing. Every AI part sounded through a Yamaha Disklavier, with real key and pedal movement.
+            </p>
+          </div>
+          <div>
+            <p>
+              The stage was organized by the Jarasum Jazz Festival, with human–AI collaboration technology by KAIST MAC Lab
+              (Prof. Juhan Nam) and visualization by Studio Meta K, as part of the Korea Creative Content Agency's
+              2026 New Technology Convergence Music Content Development program.
+            </p>
+            <p>
+              The work extends the lab's earlier stages with live performers, such as the human–AI relay performance at
+              Daejeon Arts Center (2022) and the performances with soprano Sumi Jo (2023, 2024), from score-based classical
+              music to jazz, where the form itself changes on stage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Technologies</h2>
+        <p class="section-intro">
+          The stage brought together score following, real-time accompaniment generation, pianist hand-motion generation
+          and automatic piano performance for live human–AI jazz.
+        </p>
+        <div class="tech-tags" aria-label="Technology keywords">
+          <span class="tech-tag">AI pianist “Scott”: score-following relay</span>
+          <span class="tech-tag">AI solo choruses</span>
+          <span class="tech-tag">Deepocket: real-time bass and drum accompaniment</span>
+          <span class="tech-tag">Guitar accompaniment with form tracking</span>
+          <span class="tech-tag">Tipiano hand motion × Studio Meta K visuals</span>
+          <span class="tech-tag">Yamaha Disklavier</span>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Program</h2>
+        <div class="program-list">
+          <div class="program-item">
+            <div>
+              <p class="program-title">Performance sessions</p>
+              <p class="program-credit">AI parts prepared with each artist</p>
+            </div>
+            <p class="program-credit">Kwak Jung Min Trio · Mihyang Moon × Daeho Kim · Daeuk Heo</p>
+          </div>
+          <div class="program-item">
+            <div>
+              <p class="program-title">Improvisation sessions</p>
+              <p class="program-credit">Live AI accompaniment</p>
+            </div>
+            <p class="program-credit">Yongdoe Jeong · Jimindorothy · Hyunvin An · Jiung Kang · Ji-young Lee · Jaejin Ahn</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Press</h2>
+        <ul class="press-list">
+            <li><span class="press-outlet">The Korea Times</span><a href="https://www.koreatimes.co.kr/business/tech-science/20261016/ai-artists-perform-improvised-jazz-at-jarasum-jazz-festival" target="_blank" rel="noopener noreferrer">'AI artists' perform improvised music at Jarasum Jazz Festival</a></li>
+            <li><span class="press-outlet">The Korea Herald</span><a href="https://www.koreaherald.com/article/10894721" target="_blank" rel="noopener noreferrer">Jarasum Jazz Festival puts French jazz and an AI pianist in spotlight</a></li>
+            <li><span class="press-outlet">The Herald Business</span><a href="https://biz.heraldcorp.com/article/10904472" target="_blank" rel="noopener noreferrer">KAIST's AI pianist improvises in real time with jazz musicians</a></li>
+            <li><span class="press-outlet">NoCut News</span><a href="https://en.nocutnews.co.kr/news/6592405" target="_blank" rel="noopener noreferrer">A 'Jazz AI Artist' that listens to human performances and improvises accompaniment</a></li>
+            <li><span class="press-outlet">헤럴드경제</span><a href="https://biz.heraldcorp.com/article/10904873" target="_blank" rel="noopener noreferrer">즉흥연주 피아니스트 ‘스콧’, AI였다…재즈 연주자도 ‘깜짝’</a></li>
+            <li><span class="press-outlet">데일리안</span><a href="https://www.dailian.co.kr/news/view/1702304" target="_blank" rel="noopener noreferrer">피아니스트 멈추자 AI가 연주…KAIST, 재즈 즉흥 협연</a></li>
+            <li><span class="press-outlet">한국문화경제신문</span><a href="https://www.kcenews.kr/10197" target="_blank" rel="noopener noreferrer">AI가 베이스·드럼 반주 즉석 생성…KAIST, 재즈 무대서 사람과 26곡 협연</a></li>
+            <li><span class="press-outlet">Instagram</span><a href="https://www.instagram.com/reels/DeLDrKLhxcP/" target="_blank" rel="noopener noreferrer">Jarasum Jazz Festival: stage introduction and interview (video)</a></li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Photos</h2>
+        <div class="photo-dump">
+          <img src="./components/projects/jarasum/scott.webp" alt="AI pianist Scott on the screen above jazz pianist Daeuk Heo" loading="lazy" />
+          <img src="./components/projects/jarasum/team.webp" alt="KAIST MAC Lab team with Mihyang Moon and Daeho Kim at the Jazz AI Lounge stage" loading="lazy" />
+          <img src="./components/projects/jarasum/stage.webp" alt="The Jazz AI Lounge stage" loading="lazy" />
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close image">X</button>
+    <img class="lightbox-image" src="" alt="" />
+  </div>
+  <script>
+    const expandableImages = document.querySelectorAll('.media-figure img, .hero-figure img, .photo-dump img');
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    };
+
+    expandableImages.forEach((image) => {
+      image.addEventListener('click', () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target === lightboxImage) {
+        closeLightbox();
+      }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -404,7 +404,8 @@ body {
 }
 
 .news-badge.is-talk,
-.news-badge.is-milestone {
+.news-badge.is-milestone,
+.news-badge.is-project {
   --badge-tint: #efefef;
   --badge-line: #efefef;
   --badge-ink: #333333;

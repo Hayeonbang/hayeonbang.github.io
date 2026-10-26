@@ -96,7 +96,12 @@
         "isPartOf": {
           "@type": "CreativeWork",
           "name": "NeurIPS 2026, Evaluations & Datasets Track"
-        }
+        },
+        "sameAs": [
+          "https://hayeonbang.github.io/VocalCoachBench/",
+          "https://github.com/Hayeonbang/VocalCoachBench",
+          "https://huggingface.co/datasets/Hayeonbang/VocalCoachBench"
+        ]
       },
       {
         "@type": "ScholarlyArticle",
@@ -284,7 +289,7 @@
           </div>
         </div>
       </div>
-      <div class="research-item" id="vocalcoachbench">
+      <div class="research-item" id="vocalcoachbench" onclick="window.location.href='https://hayeonbang.github.io/VocalCoachBench/'">
         <img src="./components/research/vocalcoachbench.webp" class="research-img"
           alt="VocalCoachBench dataset structure and evaluation overview" />
         <div class="research-text">
@@ -294,8 +299,10 @@
             <span class="venue" title="NeurIPS 2026, Evaluations &amp; Datasets Track">NeurIPS 2026 E&amp;D</span>
           </p>
           <div class="paper-links">
-            <a href="https://arxiv.org/abs/2609.04241" class="paper-link" target="_blank"
-              rel="noopener noreferrer">Paper</a>
+            <a href="https://arxiv.org/abs/2609.04241" class="paper-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Paper</a>
+            <a href="https://hayeonbang.github.io/VocalCoachBench/" class="paper-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Demo</a>
+            <a href="https://github.com/Hayeonbang/VocalCoachBench" class="paper-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Code</a>
+            <a href="https://huggingface.co/datasets/Hayeonbang/VocalCoachBench" class="paper-link" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Dataset</a>
           </div>
         </div>
       </div>
