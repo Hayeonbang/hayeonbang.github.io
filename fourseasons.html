@@ -157,6 +157,57 @@
 
       
     }
+    /* Press links, in the same style as the Jazz AI Lounge page */
+    .fs-press {
+      max-width: 1200px;
+      margin: 20px auto 0;
+    }
+
+    .fs-press-title {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .press-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .press-list li {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e4e4e4;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .press-outlet {
+      color: #666;
+    }
+
+    .press-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: #ccc;
+      text-underline-offset: 3px;
+    }
+
+    .press-list a:hover {
+      text-decoration-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .press-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -229,6 +280,19 @@
       
         <p>Through these musical choices, <em>Four Seasons 2050 – Daejeon</em> expresses the emotional turbulence of our climate future, while maintaining a structured musical narrative. By adding, removing, or repeating elements, the team emphasized climate-specific data-driven features within the sonic landscape.</p>
       </details>
+
+      <section class="fs-press">
+        <h2 class="fs-press-title">Press</h2>
+        <ul class="press-list">
+          <li><span class="press-outlet">KAIST News</span><a href="https://news.kaist.ac.kr/news/html/news/?mode=V&amp;mng_no=31651" target="_blank" rel="noopener noreferrer">KAIST 인공지능이 편곡한 비발디의 사계는?</a></li>
+          <li><span class="press-outlet">KAIST GSCT</span><a href="https://ct.kaist.ac.kr/boards/view/news_board/4104" target="_blank" rel="noopener noreferrer">기후 예측 데이터로 재창작한 비발디의 '사계' 공연</a></li>
+          <li><span class="press-outlet">헤럴드경제</span><a href="https://biz.heraldcorp.com/article/3220982" target="_blank" rel="noopener noreferrer">AI로 새롭게 태어난 비발디 ‘사계’…KAIST, 오케스트라 협연 공연</a></li>
+          <li><span class="press-outlet">뉴스1</span><a href="https://v.daum.net/v/5Y9yxHmB07" target="_blank" rel="noopener noreferrer">1년 중 161.5일이 여름…2050년 '대전 사계'는 어떻게 변할까</a></li>
+          <li><span class="press-outlet">에너지경제</span><a href="https://m.ekn.kr/view.php?key=20230922010006470" target="_blank" rel="noopener noreferrer">카이스트, 2050년 기후변화 반영 '비발디 사계' 공연</a></li>
+          <li><span class="press-outlet">충청일보</span><a href="https://www.ccdailynews.com/news/articleView.html?idxno=2230109" target="_blank" rel="noopener noreferrer">KAIST 인공지능이 편곡한 비발디의 사계 공연</a></li>
+          <li><span class="press-outlet">인공지능신문</span><a href="https://www.aitimes.kr/news/articleView.html?idxno=28979" target="_blank" rel="noopener noreferrer">인공지능이 편곡한 기후 변화 후 '비발디 사계'는?</a></li>
+        </ul>
+      </section>
       
     </div>
   </div>
