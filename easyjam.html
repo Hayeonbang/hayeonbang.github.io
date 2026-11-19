@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyJam - Hayeon Bang</title>
+  <meta name="description" content="EasyJam: a browser-based ensemble program for music therapy with adults with developmental disabilities, where any key or pad plays notes that fit the current chord." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EasyJam - Hayeon Bang" />
+  <meta property="og:description" content="EasyJam: a browser-based ensemble program for music therapy with adults with developmental disabilities, where any key or pad plays notes that fit the current chord." />
+  <meta property="og:url" content="https://hayeonbang.github.io/easyjam.html" />
+  <link rel="canonical" href="https://hayeonbang.github.io/easyjam.html" />
+  <meta property="og:image" content="https://hayeonbang.github.io/components/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./components/favicon-32.png" />
+  <link rel="apple-touch-icon" href="./components/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fff;
+      color: #222;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .project-header {
+      max-width: 1100px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .project-kicker {
+      margin: 0 0 16px;
+      color: #666;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      font-style: italic;
+      margin: 0 0 10px;
+    }
+
+    .project-subtitle {
+      font-size: 1.25rem;
+      color: #555;
+      font-weight: 300;
+      margin: 0 0 18px;
+      line-height: 1.55;
+    }
+
+    .project-meta {
+      margin: 0 auto;
+      color: #777;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .project-body {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 44px 80px 64px;
+      box-sizing: border-box;
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .video-container {
+      width: 100%;
+      margin: 0 auto 44px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project-section {
+      margin: 44px auto 0;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-transform: none;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: #333;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(320px, 1.28fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .media-figure {
+      margin: 0;
+    }
+
+    .media-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .media-figure figcaption {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
+    .contribution-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.4fr;
+      gap: 24px;
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      background: #fbfbfb;
+    }
+
+    .contribution-heading {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .contribution-subheading {
+      margin: 10px 0 0;
+      color: #666;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .contribution-list,
+    .tech-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .contribution-list li,
+    .tech-list li {
+      margin-bottom: 10px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .overview-grid p {
+      margin: 0 0 16px;
+    }
+
+    .work-spotlight {
+      padding: 22px 24px;
+      border-left: 3px solid #222;
+      background: #fafafa;
+    }
+
+    .work-spotlight h3 {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .work-spotlight p {
+      margin: 0;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid #d7d7d7;
+      border-radius: 4px;
+      color: #333;
+      background: #fff;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .program-list {
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    .program-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .program-credit {
+      margin: 4px 0 0;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .artist-card {
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
+
+    .artist-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .artist-affiliation {
+      margin: 0 0 18px;
+      color: #666;
+      font-size: 0.98rem;
+    }
+
+    .artist-card p {
+      margin: 0 0 16px;
+    }
+
+    .artist-card details {
+      margin-top: 18px;
+    }
+
+    .artist-card summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .artist-card details p:first-of-type {
+      margin-top: 18px;
+    }
+
+    .photo-dump {
+      column-count: 3;
+      column-gap: 12px;
+    }
+
+    .photo-dump img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 12px;
+      break-inside: avoid;
+      border: 1px solid #e2e2e2;
+      cursor: zoom-in;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      box-sizing: border-box;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .image-lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      cursor: zoom-out;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      background: #fff;
+      color: #222;
+      font: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .project-body {
+        padding: 44px 24px 64px;
+      }
+
+      .contribution-panel,
+      .overview-grid,
+      .media-grid,
+      .program-item {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-dump {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-header {
+        margin-top: 44px;
+      }
+
+      .project-title {
+        font-size: 2rem;
+      }
+
+      .project-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .project-body {
+        font-size: 1rem;
+      }
+
+      .contribution-panel,
+      .work-spotlight,
+      .artist-card {
+        padding: 22px;
+      }
+
+      .photo-dump {
+        column-count: 1;
+      }
+    }
+    /* Jazz AI Lounge page: full-width stage photo, a quiet line of numbers, press links */
+    .hero-figure {
+      margin: 0 0 12px;
+    }
+
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: zoom-in;
+    }
+
+    .hero-figure figcaption {
+      margin-top: 10px;
+      color: #666;
+      font-size: 0.94rem;
+      line-height: 1.4;
+    }
+
+    .press-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #e4e4e4;
+    }
+
+    .press-list li {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 10px 0;
+      border-bottom: 1px solid #e4e4e4;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .press-outlet {
+      color: #666;
+    }
+
+    .press-list a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: #ccc;
+      text-underline-offset: 3px;
+    }
+
+    .press-list a:hover {
+      text-decoration-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .press-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html" class="active" aria-current="page">Projects</a>
+      <a href="music.html">Music</a>
+      <a href="experiences.html">Experiences</a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-home-icon" aria-label="Home">
+        <img src="./components/home.svg" alt="" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    <header class="project-header">
+      <p class="project-kicker">Web Project · Music Therapy</p>
+      <h1 class="project-title">EasyJam</h1>
+      <h2 class="project-subtitle">A Web Ensemble Program for Music Therapy</h2>
+      <p class="project-meta">AI music-therapy program for adults with developmental disabilities, Mirae Therapy Center (2024)</p>
+    </header>
+
+    <main class="project-body">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/cjVR_Q0mkr8" title="AI music-therapy program with EasyJam at Mirae Therapy Center"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div class="paper-links">
+        <a href="https://hayeonbang.github.io/EasyJam/" class="paper-link" target="_blank" rel="noopener noreferrer">Web Demo</a>
+        <a href="https://github.com/Hayeonbang/EasyJam" class="paper-link" target="_blank" rel="noopener noreferrer">Code</a>
+      </div>
+
+      <section class="project-section">
+        <div class="contribution-panel">
+          <div>
+            <h2 class="contribution-heading">My Contributions</h2>
+            <p class="contribution-subheading">Program developer</p>
+          </div>
+          <ul class="contribution-list">
+            <li>Developed EasyJam, the web program used in the music-therapy sessions.</li>
+            <li>Designed the instruments so that any key, pad or movement plays notes that fit the current chord, letting participants without musical training join the ensemble.</li>
+            <li>Rebuilt the program for therapy sessions, with a therapist console, turn-taking, support levels and session logs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Overview</h2>
+        <div class="overview-grid">
+          <div>
+            <p>
+              EasyJam was made for an AI music-therapy program for adults with developmental disabilities at Mirae
+              Therapy Center, selected for the 2024 Gyeonggi-do Integrated Support Program for Artists with Disabilities.
+              In each session, participants play together with a therapist over a shared backing track.
+            </p>
+            <p>
+              Each participant picks an instrument on their own device: piano, saxophone, or two percussion sets.
+              Whatever key or pad they press, EasyJam plays notes that fit the chord sounding at that moment, so people who
+              have never learned an instrument can still take part in the ensemble.
+            </p>
+          </div>
+          <div>
+            <p>
+              The therapist runs the session from a console: starting and pausing the music, adjusting the tempo, setting
+              a support level for each participant, and choosing whether everyone plays together, one person solos, or
+              turns rotate every few bars.
+            </p>
+            <p>
+              All devices follow one server-synchronised clock, so the backing track and every instrument stay on the same
+              beat. Percussion can also be played by moving the head in front of a camera.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Features</h2>
+        <div class="tech-tags" aria-label="Features">
+          <span class="tech-tag">Chord-aware notes for any key or pad</span>
+          <span class="tech-tag">Therapist console</span>
+          <span class="tech-tag">Turn-taking: together, solo, rotating</span>
+          <span class="tech-tag">Support levels: easy, normal, challenge</span>
+          <span class="tech-tag">Camera-based head-movement percussion</span>
+          <span class="tech-tag">Synchronised playback across devices</span>
+          <span class="tech-tag">Session logs (CSV)</span>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <h2 class="section-title">Screenshots</h2>
+        <div class="photo-dump">
+          <img src="./components/projects/easyjam/host.webp" alt="EasyJam therapist console with room number, playback controls and four participant cards" loading="lazy" />
+          <img src="./components/projects/easyjam/lobby.webp" alt="EasyJam start screen for choosing an instrument" loading="lazy" />
+          <img src="./components/projects/easyjam/piano.webp" alt="EasyJam piano screen with nine keys and the current chord" loading="lazy" />
+          <img src="./components/projects/easyjam/percussion.webp" alt="EasyJam percussion screen" loading="lazy" />
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close image">X</button>
+    <img class="lightbox-image" src="" alt="" />
+  </div>
+  <script>
+    const expandableImages = document.querySelectorAll('.media-figure img, .hero-figure img, .photo-dump img');
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+    };
+
+    expandableImages.forEach((image) => {
+      image.addEventListener('click', () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target === lightboxImage) {
+        closeLightbox();
+      }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

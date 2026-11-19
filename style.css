@@ -565,6 +565,19 @@ body {
 }
 
 /* ---------- Works Section ---------- */
+/* Category headings on the Projects page (Performances, Web Projects) */
+.works-category {
+  margin: 48px 0 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.works-category + .works-grid {
+  margin-top: 24px;
+}
+
 .works-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
